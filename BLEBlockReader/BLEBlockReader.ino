@@ -131,7 +131,9 @@ void loop() {
       uint8 data_len_var = message.length();
       const uint8 *data_var = bytes;
       
-      ble112.ble_cmd_attributes_write(GATT_HANDLE_C_TX_DATA, 0, uid, uidLength);
+      Serial.println(*data_var);
+      //ble112.ble_cmd_attributes_write(GATT_HANDLE_C_TX_DATA, 0, uid, uidLength);
+      ble112.ble_cmd_attributes_write(GATT_HANDLE_C_TX_DATA, 0, data_len_var, data_var);
     }
     
     // keep polling for new data from BLE
